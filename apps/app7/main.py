@@ -9,7 +9,7 @@ to_learn = {}
 try:
     data = pandas.read_csv("data/words_to_learn.csv")
 except FileNotFoundError:
-    original_data = pandas.read_csv("Day31_End\data/french_words.csv")
+    original_data = pandas.read_csv("Portfolio/apps/app7\data/french_words.csv")
     print(original_data)
     to_learn = original_data.to_dict(orient="records")
 else:
@@ -47,19 +47,19 @@ window.config(padx=50, pady=50, bg=BACKGROUND_COLOR)
 flip_timer = window.after(3000, func=flip_card)
 
 canvas = Canvas(width=800, height=526)
-card_front_img = PhotoImage(file="Day31_End\images\card_front.png")
-card_back_img = PhotoImage(file="Day31_End\images/card_back.png")
+card_front_img = PhotoImage(file="Portfolio/apps/app7\images\card_front.png")
+card_back_img = PhotoImage(file="Portfolio/apps/app7\images\card_back.png")
 card_background = canvas.create_image(400, 263, image=card_front_img)
 card_title = canvas.create_text(400, 150, text="", font=("Ariel", 40, "italic"))
 card_word = canvas.create_text(400, 263, text="", font=("Ariel", 60, "bold"))
 canvas.config(bg=BACKGROUND_COLOR, highlightthickness=0)
 canvas.grid(row=0, column=0, columnspan=2)
 
-cross_image = PhotoImage(file="Day31_End\images/wrong.png")
+cross_image = PhotoImage(file="Portfolio/apps/app7\images\wrong.png")
 unknown_button = Button(image=cross_image, highlightthickness=0, command=next_card)
 unknown_button.grid(row=1, column=0)
 
-check_image = PhotoImage(file="Day31_End\images/right.png")
+check_image = PhotoImage(file="Portfolio/apps/app7\images/right.png")
 known_button = Button(image=check_image, highlightthickness=0, command=is_known)
 known_button.grid(row=1, column=1)
 
